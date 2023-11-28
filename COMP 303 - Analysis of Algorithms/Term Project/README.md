@@ -1,4 +1,4 @@
-# Tower of Hanoi Solver (Version 1.0)
+# Tower of Hanoi Solver (Version 1)
 
 This Tower of Hanoi Solver is the first version created by Group 3, including Bogdan Itsam Dorantes-Nikolaev, Ahmet Yasir Beydili, Sena Gungormez, and Doruk Gungormez.
 
