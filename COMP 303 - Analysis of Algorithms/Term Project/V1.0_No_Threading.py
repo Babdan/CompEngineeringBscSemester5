@@ -1,3 +1,4 @@
+# Made by: Group 3 => Bogdan Itsam Dorantes-Nikolaev, Ahmet Yasir Beydili, Sena Gungormez, Doruk Gungormez
 import tkinter as tk
 import time
 
