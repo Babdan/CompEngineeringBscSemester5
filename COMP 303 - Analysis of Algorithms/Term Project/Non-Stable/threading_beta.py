@@ -49,6 +49,8 @@ def execute_algorithm():
 
     try:
         num_discs = int(discs_entry.get())
+        if num_discs <= 0:
+            raise ValueError("Number of discs should be a positive integer")
         selected_algorithm = algorithm_choice.get()
         output_text.delete(1.0, tk.END)  # Clear previous output
         movements_count.set(0)  # Reset movements count
@@ -73,9 +75,18 @@ def execute_algorithm():
             update_loading_label("Algorithm execution stopped", "red")
             should_stop = False  # Reset the flag
 
+    except ValueError as ve:
+        error_message = "Invalid input for number of discs"
+        loading_label.config(text=error_message)
+        update_loading_label(error_message, "red")
+        output_text.insert(tk.END, f"Error: {ve}\n")
+        print(f"Error occurred: {ve}")
+
     except Exception as e:
-        loading_label.config(text="Algorithm execution stopped/encountered an error")
-        update_loading_label("Algorithm execution stopped/encountered an error", "red")
+        error_message = "Algorithm execution stopped/encountered an error"
+        loading_label.config(text=error_message)
+        update_loading_label(error_message, "red")
+        output_text.insert(tk.END, f"Error: {e}\n")
         print(f"Error occurred: {e}")
 
 # UI Functions
@@ -133,7 +144,7 @@ output_frame.pack()
 output_label = tk.Label(output_frame, text="Output:")
 output_label.pack()
 
-output_text = tk.Text(output_frame, height=10, width=50)
+output_text = tk.Text(output_frame, height=10, width=60)
 output_text.pack(side=tk.LEFT, fill=tk.Y)
 
 scrollbar = tk.Scrollbar(output_frame, command=output_text.yview)
