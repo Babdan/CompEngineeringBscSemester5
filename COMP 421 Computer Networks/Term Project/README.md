@@ -1,4 +1,4 @@
-# UDP Game Application 🎮
+# SEQ-ACK Learning Game 🎮
 
 ## Description 🕹️
 Welcome to the UDP Game Application! This network-based game showcases the power of UDP (User Datagram Protocol) communication in Python. With Tkinter handling the user interface and sockets managing network communication, get ready for a thrilling gaming experience. Exciting features include:
